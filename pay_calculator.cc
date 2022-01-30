@@ -4,8 +4,8 @@
 
 using namespace std;
 
-int hours, overtime, overtime_threshold = 45;
-double hourly_rate = 15.00, overtime_rate = 20.00;
+int hours, overtime = 0, overtime_threshold = 45;
+double hourly_rate = 15.00, overtime_rate = 20.00, total_pay, regular_pay, overtime_pay;
 string password;
 char admin;
 
@@ -37,7 +37,14 @@ int main()
             break;
         }
     }
-    
+    regular_pay = hourly_rate * hours;
+    overtime_pay = overtime * overtime_rate;
+    total_pay = regular_pay + overtime_pay;
+
+    cout << fixed << setprecision(2);
+    cout << setw(15)  << "Your regular pay is: $" << regular_pay << endl;
+    cout << setw(15)  << "Your overtime pay is: $" << overtime_pay << endl;
+    cout << setw(15)  << "Your total pay is: $" << total_pay << endl;
 }
     
     
